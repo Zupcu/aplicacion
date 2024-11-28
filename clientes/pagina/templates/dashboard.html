@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Panel de Control</h2>
+    <p><a href="{% url 'logout' %}">Cerrar Sesión</a></p>
+    <ul>
+        {% for cliente in clientes %}
+            <li>{{ cliente.nombre }} {{ cliente.apellido }} - <a href="{% url 'cliente_form_edit' cliente.id %}">Editar</a> - <a href="{% url 'cliente_eliminar' cliente.id %}">Eliminar</a></li>
+        {% endfor %}
+    </ul>
+    <p><a href="{% url 'cliente_form' %}">Agregar Cliente</a></p>
+</body>
+</html>
+
+
